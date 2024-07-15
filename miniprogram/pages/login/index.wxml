@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <!-- <web-view src="https://wanghao.ah.cn/home"></web-view> -->
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">登录</button>
+  </view>
+</scroll-view>
