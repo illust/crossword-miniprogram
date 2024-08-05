@@ -14,5 +14,13 @@ App<IAppOption>({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       },
     })
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#28bbf5',
+      // animation: {
+      //   duration: 400,
+      //   timingFunc: 'easeIn'
+      // }
+    })
   },
 })

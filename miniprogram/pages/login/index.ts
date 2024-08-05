@@ -13,6 +13,7 @@ Component({
     hasUserInfo: false,
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
+    src: "/image/crossworld_logo_new.png"
   },
   methods: {
     getPhoneNumber (e: any) {

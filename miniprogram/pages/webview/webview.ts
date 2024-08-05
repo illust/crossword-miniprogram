@@ -16,17 +16,26 @@ Component({
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
   methods: {
-
-onLoad: function (options: any) {
-  console.log({ 'h5传入参数': options })
-  // const newUrl = options.path +"?userId="+options.userId;
-  const newUrl = 'https://wanghao.ah.cn/home'
-  console.log('path: ',newUrl);
-  this.setData({
-    webUrl:newUrl,
-    userId:options.userId
-  })
-},
+    // onShow: function(options: any) {
+    //   this.onLoad(options)
+    // }, 
+     getBeijingTimestamp: function() {
+      // 获取当前 UTC 时间
+      const now = new Date();
+      // 获取中国标准时间（UTC+8）
+      const beijingOffset = 8 * 60 * 60 * 1000; // 8小时的毫秒数
+      const beijingTime = new Date(now.getTime() + beijingOffset);
+      // 返回时间戳
+      return Math.floor(beijingTime.getTime() / 1000);
+  },
+    onLoad: function (options: any) {
+      console.log({ 'h5传入参数': options })
+      const newUrl = 'https://wanghao.ah.cn/home'
+      this.setData({
+       webUrl:newUrl+'?timestamp='+this.getBeijingTimestamp(),
+        userId:options.userId
+      })
+    },
 
     // 事件处理函数
     bindViewTap() {
