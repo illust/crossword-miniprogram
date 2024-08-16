@@ -30,6 +30,7 @@ Component({
   },
     onLoad: function (options: any) {
       console.log({ 'h5传入参数': options })
+      // const newUrl = 'http://192.168.8.118:8088/home'
       const newUrl = 'https://wanghao.ah.cn/home'
       this.setData({
        webUrl:newUrl+'?timestamp='+this.getBeijingTimestamp(),
