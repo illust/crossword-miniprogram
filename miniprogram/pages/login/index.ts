@@ -17,8 +17,8 @@ Component({
   },
   methods: {
     getPhoneNumber (e: any) {
-      console.log("code",e.detail.code)  // 动态令牌
-      console.log("errMsg",e.detail.errMsg) // 回调信息（成功失败都会返回）
+      console.log({"code":e.detail.code})  // 动态令牌，每个令牌只能用一次
+      console.log({"errMsg":e.detail.errMsg}) // 回调信息（成功失败都会返回）
       // console.log(e.detail.errno)  // 错误码（失败时返回）
       wx.navigateTo({
         url: '/pages/webview/webview?code=' + e.detail.code,
